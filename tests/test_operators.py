@@ -121,6 +121,7 @@ def test_transitive(a: float, b: float, c: float) -> None:
     if lt(a, b) and lt(b, c):
         assert lt(a, c)
 
+
 @pytest.mark.task0_2
 @given(small_floats, small_floats)
 def test_symmetric(a: float, b: float) -> None:
@@ -150,7 +151,6 @@ def test_other(x: float, y: float, z: float) -> None:
     assert_close(mul(x, mul(y, z)), mul(mul(x, y), z))
 
 
-
 # ## Task 0.3  - Higher-order functions
 
 # These tests check that your higher-order functions obey basic
@@ -177,7 +177,6 @@ def test_sum_distribute(ls1: List[float], ls2: List[float]) -> None:
     is the same as the sum of each element of `ls1` plus each element of `ls2`.
     """
     assert_close(sum(ls1) + sum(ls2), sum(addLists(ls1, ls2)))
-
 
 
 @pytest.mark.task0_3

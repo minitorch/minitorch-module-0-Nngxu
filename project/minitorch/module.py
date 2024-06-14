@@ -61,7 +61,7 @@ class Module:
         The following code is aimed to show structure of recursive function,
         it can be implemented in a more concise way:
             ```
-            self.training = False 
+            self.training = False
             list = self.modules()
             for x in list:
                 x.eval()
@@ -69,12 +69,12 @@ class Module:
             ```
         """
         # base case
-        if (len(self.modules()) == 0):
-            self.training = False 
+        if len(self.modules()) == 0:
+            self.training = False
             return
 
         # recursive case
-        self.training = False 
+        self.training = False
         list = self.modules()
         for x in list:
             x.eval()
@@ -202,7 +202,7 @@ class Module:
 
         for key, module in self._modules.items():
             mod_str = repr(module)
-            # Add two spaces at the begin of child modules 
+            # Add two spaces at the begin of child modules
             # method: Add two spaces after all `\n`
             # because before the first `\n` is the parent module class name
             # cause by `main_str += "\n  " + "\n  ".join(lines) + "\n"`
@@ -216,10 +216,10 @@ class Module:
             # example:lines = '(c): ModuleA4()', main_str = ModuleA3(
             # output: "\n  ".join(lines) = '(c): ModuleA4()'
             #                   main_str = 'ModuleA3(\n  (c): ModuleA4()\n'
-            # first "\n ": before "\n " -> parent module class name, here is `ModuleA3(` 
+            # first "\n ": before "\n " -> parent module class name, here is `ModuleA3(`
             #              after "\n" -> chile module name + chile module Class name,here is `(c): ModuleA4()`
             # second "\n ": using `\n ` sepereate multiple child modules
-            # final "\n": end of the string 
+            # final "\n": end of the string
             # Another example:
             # lines = ['(a): ModuleA2()', '(b): ModuleA3()']
             # main_str = 'ModuleA1('

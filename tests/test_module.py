@@ -77,6 +77,7 @@ class Module1(minitorch.Module):
         self.module_b = Module2(size_b)
         self.parameter_a = minitorch.Parameter(val)
 
+
 class Module2(minitorch.Module):
     def __init__(self, extra: int = 0) -> None:
         super().__init__()
